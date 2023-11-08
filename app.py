@@ -25,9 +25,9 @@ if st.button("Predict"):
     data_preprocessor = DataPreprocessor()
     preprocessed_input = data_preprocessor.preprocess_user_input(
         user_input,
-        'models/preprocessor_dl.joblib',
-        'models/category_mappings_dl.joblib',
-        'data/processed/avg_features_dl.csv'
+        'preprocessor_dl.joblib',
+        'category_mappings_dl.joblib',
+        'avg_features_dl.csv'
     )
 
     # Paths to all the students' models
