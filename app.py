@@ -49,6 +49,7 @@ if st.button("Predict"):
 
     ml_preprocessor = PreProcessor()
     prediction_ronik = ml_preprocessor.preprocess_for_user_input(user_input, 'preprocessor and mappings/mapped_average_values_ronik.csv')
+    prediction_aibarna = ml_preprocessor.preprocess_for_user_input_filtered(user_input, 'data/processed/mapped_average_values_ronik.csv')
 
     # Paths to all the students' models
     model_student_mapping = {
@@ -92,3 +93,5 @@ if st.button("Predict"):
             st.write(f"Prediction from {student_name}: ${predicted_fare1[0][0]:.2f}")
 
     st.write(f"Prediction from Ronik's XGBRegressor Model: ${prediction_ronik[0]:.2f}")
+
+    st.write(f"Prediction from Aibarna's Random Forest Regressor Model: ${prediction_aibarna[0]:.2f}")

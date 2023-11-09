@@ -12,6 +12,7 @@ FLIGHT_FARE_APP/
 │ ├── best_model/ # Contains the best performing model artifacts for Ronik's XGBRegressor model.
 │ ├── best_model_Shivatmak/ # Shivatmak's LSTM model artifacts.
 │ ├── best_model-vishal_raj/ # Vishal Raj's Wide and Deep model artifacts.
+│ ├── best_model_aibarna/ # Aibarna's Random Forest Regressor model artifacts.
 │
 ├── preprocessor and mappings/ # Directory for data preprocessing and mappings.
 │ ├── avg_features_dl.csv # Average features for deep learning model.
@@ -73,6 +74,7 @@ A big thank you to our team members who have contributed their models and prepro
 - Vishal Raj: Wide and Deep Neural Network model
 - Shivatmak: LSTM model
 - Ronik: XGBRegressor model preprocessing and mappings
+- Aibarna: Random Forest Regressor model
 
 Their hard work and dedication have made this tool what it is.
 
