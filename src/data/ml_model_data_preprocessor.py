@@ -188,3 +188,26 @@ class PreProcessor:
             prediction = model_xgb.predict(self.user_df)
 
             return np.array(prediction)
+        
+    def preprocess_for_user_input_filtered(self, user_input, average_values_path):
+        self.user_df = pd.DataFrame([user_input])
+        if self.user_df['segmentsDepartureTimeRaw'].dtype == 'object':
+
+            self.user_df['flightDate'] = pd.to_datetime(self.user_df['flightDate'].astype(str), format='%Y-%m-%d', errors='coerce')
+            self.user_df['segmentsDepartureTimeRaw'] = self.user_df['segmentsDepartureTimeRaw'].astype(str)
+            self.user_df['segmentsDepartureTimeRaw'] = self.user_df['flightDate'].astype(str) + ' ' + self.user_df['segmentsDepartureTimeRaw']
+            self.user_df['segmentsDepartureTimeRaw'] = pd.to_datetime(self.user_df['segmentsDepartureTimeRaw'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
+            self.user_df = self.get_date_time(self.user_df)
+            self.user_df = self.map_categorical_features(self.user_df)
+            average_values = pd.read_csv(average_values_path)
+            self.user_df = self.user_df.merge(average_values, on=['startingAirport', 'destinationAirport'], how='left')
+            self.user_df = self.user_df[['startingAirport', 'destinationAirport',
+                                            'segmentsCabinCode', 'year', 'month', 'day',
+                                            'hour', 'minute',
+                                           ]]
+            model_xgb = joblib.load("models/best_model_aibarna/best_model_aibarna_final.pb")
+            prediction = model_xgb.predict(self.user_df)
+
+            return np.array(prediction)
+        
+    
