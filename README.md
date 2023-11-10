@@ -71,9 +71,9 @@ This project is licensed under the terms of the MIT license - see the [LICENSE](
 
 A big thank you to our team members who have contributed their models and preprocessing expertise to this app:
 
-- Vishal Raj: Wide and Deep Neural Network model
+- Vishal Raj: Wide and Deep Neural Network model, preprocessing and mappings for dl models
 - Shivatmak: LSTM model
-- Ronik: XGBRegressor model preprocessing and mappings
+- Ronik: XGBRegressor model, preprocessing and mappings for ml models
 - Aibarna: Random Forest Regressor model
 
 Their hard work and dedication have made this tool what it is.
