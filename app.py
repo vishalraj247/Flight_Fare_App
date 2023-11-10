@@ -1,5 +1,5 @@
 import streamlit as st
-from src.data.data_preprocessor import DataPreprocessor
+from src.data.data_preprocessor_dl import DataPreprocessor
 from src.data.ml_model_data_preprocessor import PreProcessor
 import joblib
 import tensorflow as tf
